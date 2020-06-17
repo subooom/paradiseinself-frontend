@@ -1,39 +1,36 @@
+/* eslint-disable no-tabs */
 <template>
-    <div class="full-container"
-        :style="
-          '--total_width: '+apps.length*20+'vw;'">
-        <ParaSliderLegendBar
-          @nextClicked="handleNextClicked"
-          @prevClicked="handlePrevClicked"
-          @dotsClicked="handleDotsClicked"
-          :color=color
-          :background=background
-        ></ParaSliderLegendBar>
-        <ParaImageDrops url="./img/1.jpg"></ParaImageDrops>
-        <ParaSlickSlider
-          @appSlideChanged="handleAppSlideChanged"
-          @appSlideInit="handleAppSlideInit"
-        >
-          <ParaAppBanner
-            v-for="app in apps"
-            :key=app.title
-            :title=app.title
-            :background=app.background
-            :color=app.color
-            :overlayBackground=app.overlayBackground
-            :url=app.url
-            :buttons=app.buttons
-          ></ParaAppBanner>
-          <About></About>
-        </ParaSlickSlider>
-    </div>
+<div class="full-container" :style="'--total_width: ' + apps.length * 20 + 'vw;'">
+<ParaSliderLegendBar
+@nextClicked="handleNextClicked"
+@prevClicked="handlePrevClicked"
+@dotsClicked="handleDotsClicked"
+:color="color"
+:background="background"
+></ParaSliderLegendBar>
+<ParaSlickSlider
+@appSlideChanged="handleAppSlideChanged"
+@appSlideInit="handleAppSlideInit"
+>
+<ParaAppBanner
+v-for="app in apps"
+:key="app.title"
+:title="app.title"
+:background="app.background"
+:color="app.color"
+:overlayBackground="app.overlayBackground"
+:url="app.url"
+:buttons="app.buttons"
+></ParaAppBanner>
+<About></About>
+</ParaSlickSlider>
+</div>
 </template>
 
 <script>
 import LocalStorage from '../../models/storage';
 import ParaAppBanner from '../../components/ParaAppBanner.vue';
 import ParaSlickSlider from '../../components/ParaSlickSlider.vue';
-import ParaImageDrops from '../../components/ParaImageDrops.vue';
 import ParaSliderLegendBar from '../../components/ParaSliderLegendBar.vue';
 import About from './About.vue';
 
@@ -43,7 +40,6 @@ export default {
     ParaAppBanner,
     ParaSlickSlider,
     ParaSliderLegendBar,
-    ParaImageDrops,
     About,
   },
   props: {
@@ -67,7 +63,7 @@ export default {
           url: 'http://localhost:8080',
           buttons: [
             {
-              title: 's\'up, s\'up?',
+              title: "s'up, s'up?",
               url: '#',
             },
             {
@@ -127,8 +123,7 @@ export default {
       ],
     };
   },
-  mounted() {
-  },
+  mounted() {},
   beforeMount() {
     LocalStorage.set('app_mode', 'paradiseinself');
   },
@@ -177,5 +172,4 @@ export default {
 };
 </script>
 
-<style lang="stylus" scoped>
-</style>
+<style lang="stylus" scoped></style>

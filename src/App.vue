@@ -1,17 +1,16 @@
 <template>
   <div id="app" class="page-body">
-
     <ParadiseInSelfNavbar
       :navLinksColor="navLinksColor"
       @navItemClicked="handleNavItemClicked"
       :logoColor="logoColor"
       @logoClicked="playMusic"
       :activeIndex="activeIndex"
-      v-show="appMode==='paradiseinself'"
+      v-show="appMode === 'paradiseinself'"
     ></ParadiseInSelfNavbar>
     <ParaCircleLoop :startLoop="logoClicked"></ParaCircleLoop>
     <!-- <LoadingScreen></LoadingScreen> -->
-    <ProjectsTrackerSideBar v-show="appMode==='projects_tracker'"></ProjectsTrackerSideBar>
+    <ProjectsTrackerSideBar v-show="appMode === 'projects_tracker'"></ProjectsTrackerSideBar>
     <Home
       @slickIncoming="handleSlickIncoming"
       :activeIndex="activeIndex"
@@ -21,17 +20,14 @@
 </template>
 
 <script>
-
 import ParadiseInSelfNavbar from './components/ParadiseInSelfNavbar.vue';
 import ProjectsTrackerSideBar from './components/ProjectsTrackerSideBar.vue';
 import ParaCircleLoop from './components/ParaCircleLoop.vue';
 import Home from './views/pages/Home.vue';
-
 import LocalStorage from './models/storage';
 
 const DEFAULT_TRANSITION = 'fade';
 const DEFAULT_TRANSITION_MODE = 'out-in';
-
 
 export default {
   name: 'app',
@@ -43,8 +39,9 @@ export default {
   },
   created() {
     this.$router.beforeEach((to, from, next) => {
-      let transitionName = to.meta.transitionName || from.meta.transitionName || DEFAULT_TRANSITION;
-
+      let transitionName = to.meta.transitionName
+        || from.meta.transitionName
+        || DEFAULT_TRANSITION;
       if (transitionName === 'slide') {
         const toDepth = to.path.split('/').length;
         const fromDepth = from.path.split('/').length;
@@ -74,8 +71,7 @@ export default {
     });
   },
   beforeMount() {
-    LocalStorage.set('app_mode', 'paradiseinself');
-
+    LocalStorage.set("'app_mode'", "'paradiseinself'");
     this.audio = new Audio('./media/background.ogg');
     this.audio.preload = true;
     this.audio.loop = true;
@@ -139,11 +135,13 @@ export default {
       console.log(this.audio);
       const playPromise = this.audio.play();
       if (playPromise) {
-        playPromise.then(() => {
-          console.log('Did you hear that?');
-        }).catch((error) => {
-          console.log(`playSound error: ${error}`);
-        });
+        playPromise
+          .then(() => {
+            console.log('Did you hear that?');
+          })
+          .catch((error) => {
+            console.log(`playSound error: ${error}`);
+          });
       }
     },
   },
@@ -151,6 +149,9 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-  body
-    background var(--background) !important
+body {
+  background: var(--background) !important;
+}
+
+
 </style>

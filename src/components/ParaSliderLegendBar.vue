@@ -166,6 +166,12 @@ export default {
     position: absolute;
     z-index: 5;
 
+    @media screen and (max-width: 600px)
+     padding-left 41px
+
+     @media screen and (max-width: 768px)
+      padding-left 47px
+
   .transparent-circle-div
     display flex
     flex-direction row

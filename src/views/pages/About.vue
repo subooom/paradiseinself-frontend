@@ -176,6 +176,7 @@ setTransition()
     padding-right: 20px;
     flex-wrap: wrap;
 }
+
 .header{
     width: 100%;
     display: flex;
@@ -250,10 +251,32 @@ h5 {
 .about h1 {
     margin: 65px 10px 50px 180px;
     text-transform: lowercase;
-    font-size: 100px;text-align: right;
+    font-size: 100px;
+    text-align: right;
 }
+
+@media screen and (max-width:600px){
+ .about h1{
+   margin-top :140px;
+   font-size: 75px;
+}
+}
+
+
+@media screen and (max-width:768px){
+ .about h1{
+   margin-top :140px;
+   font-size: 75px;
+}
+}
+@media screen and (max-width:360px){
+ .about h1{
+   margin-top :140px;
+   font-size: 70px;
+}
+}
+
 h1 {
-    margin-left: 158px;
     color: var(--color);
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -287,6 +310,17 @@ h4 {
     width: 263px;
 }
 
+@media screen and (max-width:600px){
+ .desc {
+   margin-left :100px;
+}
+}
+
+@media screen and (max-width:768px){
+ .desc {
+   margin-left :100px;
+}
+}
 .desc p {
     color: var(--color);
     font-size: 12px;
@@ -364,26 +398,26 @@ h4 {
     color: var(--color);
     margin-top: 8px;
 }
-@media (min-width: 576px) {
+// @media (min-width: 576px) {
 
-  .desc{
-    margin-left: 0;
-  }
-}
+//   .desc{
+//     margin-left: 0;
+//   }
+// }
 
-@media (min-width: 768px) {
+// @media (min-width: 768px) {
 
-  .desc{
-    margin-left: 0;
-  }
-}
+//   .desc{
+//     margin-left: 0;
+//   }
+// }
 
-@media (min-width: 992px) {
+// @media (min-width: 992px) {
 
-  .desc{
-    margin-left: 0;
-  }
-}
+//   .desc{
+//     margin-left: 0;
+//   }
+// }
 
 @media (min-width: 1155px) {
   .header-content{
