@@ -3,8 +3,7 @@
  */
 
 import VueRouter from 'vue-router';
-import pagesRoutes from '../views/pages/routes';
-import projectsTrackerRoutes from '../views/pages/projects_tracker/routes';
+import radicleFlowRoutes from '../views';
 
 // 2. Define some routes
 // Each route should map to a component. The "component" can
@@ -12,7 +11,7 @@ import projectsTrackerRoutes from '../views/pages/projects_tracker/routes';
 // `Vue.extend()`, or just a component options object.
 // We'll talk about nested routes later.
 
-const routes = [...pagesRoutes, ...projectsTrackerRoutes];
+const routes = [...radicleFlowRoutes];
 
 // 3. Create the router instance and pass the `routes` option
 // You can pass in additional options here, but let's

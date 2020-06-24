@@ -5,7 +5,7 @@
 
 import Verify from '../../components/auth/Verify.vue';
 import Home from './Home.vue';
-import ProjectsTracker from './projects_tracker/Index.vue';
+import ProjectsTracker from '../../apps/radicle_flow/views/Index.vue';
 import About from './About.vue';
 
 import LocalStorage from '../../models/storage';

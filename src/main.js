@@ -6,11 +6,10 @@
 import VueRouter from 'vue-router';
 
 import Vue from 'vue';
-import router from './router';
 import App from './App.vue';
+import { createProvider } from './vue-apollo';
 
 require('./bootstrap');
-
 
 Vue.use(VueRouter);
 /**
@@ -21,7 +20,11 @@ Vue.use(VueRouter);
 
 const app = new Vue({
   el: '#app',
-  router, // short for `router: router`
+
+  // short for `router: router`
+
+  apolloProvider: createProvider(),
+
   render: (h) => h(App),
 });
 

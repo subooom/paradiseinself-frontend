@@ -89,7 +89,7 @@ export default {
     position absolute
 
   random()
-    return math(math(0, 'random') * 50 + 71, 'floor')s
+    return math(math(0, 'random') * 50 + 101, 'floor')s
 
   .start-calmer
     animation calmerStart random() linear infinite
@@ -102,17 +102,17 @@ export default {
     7%
       width: calc(var(--size)*5)
       height: calc(var(--size)*5)
-    80%
-      width: calc(var(--size)*30)
-      height: calc(var(--size)*30)
-      opacity 0%
-    90%
-      opacity 0%
-      height: var(--size)
-      width: var(--size)
+    50%
+      width: calc(var(--size)*15)
+      height: calc(var(--size)*15)
+      opacity 40%
+    57%
+      width: calc(var(--size)*13)
+      height: calc(var(--size)*13)
+      opacity 40%
     100%
-      width: var(--size)
+      opacity 70%
       height: var(--size)
-      opacity 100%
+      width: var(--size)
 
 </style>

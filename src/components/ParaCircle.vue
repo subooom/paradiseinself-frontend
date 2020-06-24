@@ -1,5 +1,6 @@
 <template>
       <div
+        :data-id="dataID"
         class="circle-container"
         :style="
           '--size: '+size+';'
@@ -7,7 +8,8 @@
           +' --opacity:' +opacity+ ';'
           +' --background:'+background"
       >
-        <div class="inner-circle">
+        <div class="inner-circle"
+        :data-id="dataID">
 
         </div>
       </div>
@@ -20,6 +22,10 @@ export default {
     size: {
       type: String,
       default: '20px',
+    },
+    dataID: {
+      type: String,
+      default: '0',
     },
     color: {
       type: String,

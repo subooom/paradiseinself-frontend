@@ -8,7 +8,7 @@
           size="8px"
           opacity="25%"
           :color=color
-          :background=background data-id='0'
+          :background=background dataID='0'
         ></ParaCircle>
       </div>
       <div class='para-slick-dot-container' @click="handleDotsClick" data-id='1'>
@@ -18,7 +18,7 @@
           size="8px"
           opacity="45%"
           :color=color
-          :background=background data-id='1'
+          :background=background dataID='1'
         ></ParaCircle>
       </div>
       <div class='para-slick-dot-container' @click="handleDotsClick" data-id='2'>
@@ -28,7 +28,7 @@
           size="8px"
           opacity="65%"
           :color=color
-          :background=background data-id='2'
+          :background=background dataID='2'
         ></ParaCircle>
       </div>
       <div class='para-slick-dot-container' @click="handleDotsClick" data-id='3'>
@@ -38,7 +38,8 @@
           size="8px"
           opacity="100%"
           :color=color
-          :background=background data-id='3'
+          :background=background
+          dataID='3'
         ></ParaCircle>
       </div>
     </div>

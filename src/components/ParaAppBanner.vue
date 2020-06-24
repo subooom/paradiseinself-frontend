@@ -20,7 +20,10 @@
     <div class="banner-body">
       <div class="body-left-container">
         <div class="banner-links">
-          <div v-for="btn in buttons" :key=btn.title class="body-item"><p>{{ btn.title }}</p></div>
+          <div v-for="btn in buttons"
+            @click=handleButtonClick
+            :data-url=btn.url :key=btn.title class="body-item">
+            <p :data-url=btn.url >{{ btn.title }}</p></div>
         </div>
         <ParaLine
           class="body-underline"
@@ -101,10 +104,12 @@ export default {
       const parallaxInstance = new Parallax(scene);
       console.log(parallaxInstance);
     },
+    handleButtonClick(e) {
+      window.open(e.target.dataset.url, '_blank');
+    },
     handleTitleClick(e) {
       this.playAudio(this.audio);
       const header = e.target;
-      console.log(header);
       header.classList.remove('rocket-in');
       header.classList.add('rocket-out');
       setTimeout(() => {

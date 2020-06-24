@@ -15,36 +15,12 @@
 
       <div class='collapse navbar-collapse' id='navbarColor02'>
         <ul class='navbar-nav mr-auto'>
-          <li class='nav-item'>
+          <li v-for="item in navItems.data" :key="item.id" class='nav-item'>
             <a
               @click="handleClick"
-              class='nav-link' data-id="0"
-              href='#radicle-flow'
-            >radicle flow!</a>
-          </li>
-          <li class='nav-item'>
-            <a
-              @click="handleClick"
-              class='nav-link'
-              data-id="1"
-              href='#jod-ghatau'
-            >jod ghatau?</a>
-          </li>
-          <li class='nav-item'>
-            <a
-              @click="handleClick"
-              class='nav-link'
-              data-id="2"
-              href='#ktm-rock'
-            >ktm rock.</a>
-          </li>
-          <li class='nav-item'>
-            <a
-              @click="handleClick"
-              class='nav-link'
-              data-id="3"
-              href='#about'
-            >about!</a>
+              class='nav-link' :data-id="item.id"
+              :href="item.href"
+            >{{item.title}}</a>
           </li>
           <ParaLine
             class='nav-link-divider'
@@ -55,7 +31,7 @@
           </ParaLine>
         </ul>
       </div>
-      <h2 class='logo' @click="handleLogoClick">paradiseinself</h2>
+      <h2 class='logo' @click="handleLogoClick">{{title}}</h2>
     </nav>
 </template>
 
@@ -66,6 +42,12 @@ import ParaLine from './ParaLine.vue';
 export default {
   name: 'TheNavBar',
   props: {
+    navItems: {
+      type: Object,
+    },
+    title: {
+      type: String,
+    },
     // eslint-disable-next-line vue/require-prop-type-constructor
     show: true,
     logoColor: {

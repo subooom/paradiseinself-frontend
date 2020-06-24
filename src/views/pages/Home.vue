@@ -1,5 +1,6 @@
 <template>
     <div class="full-container"
+        v-show="apps"
         :style="
           '--total_width: '+apps.length*20+'vw;'">
         <ParaSliderLegendBar
@@ -9,10 +10,11 @@
           :color=color
           :background=background
         ></ParaSliderLegendBar>
-        <ParaImageDrops url="./img/1.jpg"></ParaImageDrops>
+        <!-- <ParaImageDrops url="./img/1.jpg"></ParaImageDrops> -->
         <ParaSlickSlider
           @appSlideChanged="handleAppSlideChanged"
           @appSlideInit="handleAppSlideInit"
+          v-if="apps"
         >
           <ParaAppBanner
             v-for="app in apps"
@@ -22,7 +24,7 @@
             :color=app.color
             :overlayBackground=app.overlayBackground
             :url=app.url
-            :buttons=app.buttons
+            :buttons=JSON.parse(app.buttons)
           ></ParaAppBanner>
           <About></About>
         </ParaSlickSlider>
@@ -33,7 +35,7 @@
 import LocalStorage from '../../models/storage';
 import ParaAppBanner from '../../components/ParaAppBanner.vue';
 import ParaSlickSlider from '../../components/ParaSlickSlider.vue';
-import ParaImageDrops from '../../components/ParaImageDrops.vue';
+// import ParaImageDrops from '../../components/ParaImageDrops.vue';
 import ParaSliderLegendBar from '../../components/ParaSliderLegendBar.vue';
 import About from './About.vue';
 
@@ -43,7 +45,7 @@ export default {
     ParaAppBanner,
     ParaSlickSlider,
     ParaSliderLegendBar,
-    ParaImageDrops,
+    // ParaImageDrops,
     About,
   },
   props: {
@@ -51,90 +53,27 @@ export default {
       type: Number,
       default: 0,
     },
+    apps: Array,
   },
   data() {
     return {
       slick: undefined,
       color: '',
       background: '',
-      apps: [
-        {
-          title: 'radicle_flow();',
-          slug: 'radicle-flow',
-          background: '#fef76c',
-          color: '#58355E',
-          overlayBackground: '#30F2F2',
-          url: 'http://localhost:8080',
-          buttons: [
-            {
-              title: 's\'up, s\'up?',
-              url: '#',
-            },
-            {
-              title: 'go get some?',
-              url: '#',
-            },
-            {
-              title: 'sauce, raw sauce!',
-              url: '#',
-            },
-          ],
-        },
-        {
-          title: 'jod_ghatau();',
-          slug: 'jod-ghatau',
-          background: '#FF5964',
-          color: '#F7EBE8',
-          overlayBackground: '#EF2D56',
-          url: 'http://localhost:8080',
-          buttons: [
-            {
-              title: 'what it do tho?',
-              url: '#',
-            },
-            {
-              title: 'go get some?',
-              url: '#',
-            },
-            {
-              title: 'sass, a lot of sass!',
-              url: '#',
-            },
-          ],
-        },
-        {
-          title: 'ktm_rock();',
-          slug: 'ktm-rock',
-          background: '#C42021  ',
-          color: '#FCBA04 ',
-          overlayBackground: '#590004',
-          url: 'http://localhost:8080',
-          buttons: [
-            {
-              title: 'no pop, ay!',
-              url: '#',
-            },
-            {
-              title: 'go get some?',
-              url: '#',
-            },
-            {
-              title: 'sauce, raw sauce!',
-              url: '#',
-            },
-          ],
-        },
-      ],
     };
   },
   mounted() {
+    console.log(this.apps, 'prop');
   },
   beforeMount() {
     LocalStorage.set('app_mode', 'paradiseinself');
   },
   methods: {
     handleDotsClicked(id) {
-      this.slick.slickGoTo(id);
+      console.log(this.activeIndex, id);
+      if (this.activeIndex !== id) {
+        this.slick.slickGoTo(id);
+      }
     },
     handleNextClicked() {
       this.slick.next();

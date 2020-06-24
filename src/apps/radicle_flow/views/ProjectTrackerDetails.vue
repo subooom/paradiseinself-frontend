@@ -14,13 +14,7 @@
                 <input class="picker" type="text">
             </div>
         </div>
-        <div
-          class="col1"
-          style="display: flex;
-            flex-direction:column;
-            justify-content: center;
-            align-items: center;"
-        >
+        <div class="col1" style="display: flex;flex-direction:column; justify-content: center;align-items: center;">
             <p>&nbsp;&nbsp;&nbsp;&nbsp;<img src="/img/avatar.png" class="user"></p>
             <br>
             <button id="modalBtn" class="add">+ Add Funds</button>
@@ -35,9 +29,7 @@
                 <p style="color:#d27fe7"><i class="fas fa-bus"></i> Transport <span></span>$240</p>
             </div>
             <div class="box3" style="margin-top:24px">
-                <p style="color: darkblue">
-                  <i class="fas fa-shopping-basket"></i> Grocery<span></span>$140
-                </p>
+                <p style="color: darkblue"><i class="fas fa-shopping-basket"></i> Grocery<span></span>$140</p>
             </div>
             <div class="newbudget" style="margin-top:24px">
                 <p style="color: darkblue">+ Add new card</p>
@@ -70,12 +62,7 @@
     </div>
 
     <div class="row"
-        style="margin-top: 15px;
-        display: flex;
-        justify-content: space-around;
-        margin-bottom: 50px;
-        overflow-y: hidden;"
-      >
+        style="margin-top: 15px;display: flex;justify-content: space-around;margin-bottom: 50px;overflow-y: hidden;">
         <div class="col-6" style="padding: 0">
             <h1 style="float:left">Expenses activity</h1>
             <h1 style="float: right">This Week <i class="fas fa-angle-down"></i></h1>
@@ -89,37 +76,35 @@
             <h3>Expenses Breakdown</h3>
             <div class="expensesitems">
                 <div class="items" style="margin-top:20px">
-                <i class="fas fa-store" style="color:rgb(240, 130, 146)"></i>
-                  &nbsp; Prime super shop
-                    <span style="color:rgb(240, 130, 146)"> $140 </span>
+                <i class="fas fa-store" style="color:rgb(240, 130, 146)"></i> &nbsp; Prime super shop
+                    <span style="color:rgb(240, 130, 146)"> $140 </span></p>
                     <p> Grocery</p>
                 </div>
 
                 <div class="items" style="margin-top:25px">
-                     <i class="fas fa-store" style="color:rgb(82, 197, 159)"></i>
-                     &nbsp; Prime super shop
-                     <span style="color:rgb(82, 197, 159);font-size:15px"> $140 </span>
+                     <i class="fas fa-store" style="color:rgb(82, 197, 159)"></i> &nbsp; Prime super shop
+                     <span style="color:rgb(82, 197, 159);font-size:15px"> $140 </span></p>
                        <p>Mobile</p>
                 </div>
 
                 <div class="items" style="margin-top:25px">
                     <i class="fas fa-store" style=" color:rgb(240, 130, 146)"></i>
                      &nbsp; Prime super shop
-                     <span style="color:rgb(240, 130, 146);font-size:15px"> $140 </span>
+                     <span style="color:rgb(240, 130, 146);font-size:15px"> $140 </span></p>
                      <p>Grocery</p>
                 </div>
 
                 <div class="items" style="margin-top:25px">
                     <i class="fas fa-store" style="color:rgb(82, 197, 159)"></i>
                     &nbsp; Prime super shop
-                    <span style="color:rgb(82, 197, 159);font-size:15px"> $140 </span>
+                    <span style="color:rgb(82, 197, 159);font-size:15px"> $140 </span></p>
                       <p>Grocery</p>
                 </div>
 
                 <div class="items" style="margin-top:25px">
                     <i class="fas fa-store" style="color:rgb(240, 130, 146)"></i>
                     &nbsp; Prime super shop
-                    <span style="color:rgb(240, 130, 146);font-size:15px"> $140 </span>
+                    <span style="color:rgb(240, 130, 146);font-size:15px"> $140 </span></p>
                      <p>Grocery</p>
                 </div>
             </div>
@@ -132,18 +117,6 @@
     </div>
 </div>
 </template>
-
-<script>
-
-import LocalStorage from '../../../models/storage';
-
-export default {
-  name: 'ProjectTrackerDetails',
-  beforeMount() {
-    LocalStorage.set('app_mode', 'projects_tracker');
-  },
-};
-</script>
 
 <style scoped>
 .container {
@@ -417,6 +390,7 @@ span {
 }
 
 
+
 .newbudget:hover {
     border-color: black;
     cursor: pointer;
@@ -537,3 +511,15 @@ span {
 }
 
 </style>
+<script>
+
+  import LocalStorage from './../../../models/storage';
+
+  export default{
+
+    name: 'ProjectTrackerDetails',
+    beforeMount(){
+      LocalStorage.set('app_mode', 'projects_tracker')
+    }
+  }
+</script>
