@@ -7,4 +7,12 @@
 }
 body{
   overflow: hidden;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+@media screen and (min-width: 900px){
+  body{
+    overflow-y: auto;
+  }
 }

@@ -82,6 +82,12 @@ export default {
     color var(--logo-color)
     background var(--nav-links-color)
 
+    @media screen and (max-width: 600px)
+     margin-top -8px
+
+    @media screen and (max-width: 768px)
+     margin-top -8px
+
   .nav-link
     color var(--nav-links-color) !important
     cursor pointer

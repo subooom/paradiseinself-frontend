@@ -1,5 +1,6 @@
 <template>
   <div id="app" class="page-body">
+<<<<<<< HEAD
     <!-- <LoadingScreen></LoadingScreen> -->
     <ApolloQuery
       :query="gql => gql`
@@ -40,22 +41,43 @@ query {
             </div>
         </template>
     </ApolloQuery>
+=======
+    <ParadiseInSelfNavbar
+      :navLinksColor="navLinksColor"
+      @navItemClicked="handleNavItemClicked"
+      :logoColor="logoColor"
+      @logoClicked="playMusic"
+      :activeIndex="activeIndex"
+      v-show="appMode === 'paradiseinself'"
+    ></ParadiseInSelfNavbar>
+    <ParaCircleLoop :startLoop="logoClicked"></ParaCircleLoop>
+    <!-- <LoadingScreen></LoadingScreen> -->
+    <ProjectsTrackerSideBar v-show="appMode === 'projects_tracker'"></ProjectsTrackerSideBar>
+    <Home
+      @slickIncoming="handleSlickIncoming"
+      :activeIndex="activeIndex"
+      @slideChanged="handleSlideChanged"
+    ></Home>
+>>>>>>> 646ddc39ce72e2188d270abae35b69c7be3b611c
   </div>
 </template>
 
 <script>
+<<<<<<< HEAD
 // eslint-disable-next-line import/no-extraneous-dependencies
 // import gql from 'graphql-tag';
 
 import ParaNavBar from './components/ParaNavbar.vue';
+=======
+import ParadiseInSelfNavbar from './components/ParadiseInSelfNavbar.vue';
+import ProjectsTrackerSideBar from './components/ProjectsTrackerSideBar.vue';
+>>>>>>> 646ddc39ce72e2188d270abae35b69c7be3b611c
 import ParaCircleLoop from './components/ParaCircleLoop.vue';
 import Home from './views/pages/Home.vue';
-
 import LocalStorage from './models/storage';
 
 const DEFAULT_TRANSITION = 'fade';
 const DEFAULT_TRANSITION_MODE = 'out-in';
-
 
 export default {
   name: 'app',
@@ -183,11 +205,13 @@ export default {
       this.bgMusic.muted = false;
       const playPromise = this.bgMusic.play();
       if (playPromise) {
-        playPromise.then(() => {
-          console.log('Did you hear that?');
-        }).catch((error) => {
-          console.log(`playSound error: ${error}`);
-        });
+        playPromise
+          .then(() => {
+            console.log('Did you hear that?');
+          })
+          .catch((error) => {
+            console.log(`playSound error: ${error}`);
+          });
       }
     },
   },
@@ -195,6 +219,9 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-  body
-    background var(--background) !important
+body {
+  background: var(--background) !important;
+}
+
+
 </style>

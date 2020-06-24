@@ -161,16 +161,19 @@ setTransition()
   left 0
   right 0
   background var(--background)
-  height: 100vh
+  height 100vh
   padding-top 130px
   width: 100vw
+
+  @media screen and (max-width: 600px)
+   height 100vh
 
   .banner-title
     width 100%
     margin-top 7rem
     cursor pointer
-    display: flex;
-    flex-direction: column;
+    display flex
+    flex-direction column
     position relative
 
   hoverTransition(att, t, timing)
@@ -217,6 +220,12 @@ setTransition()
     z-index 5
     hoverTransition(all, 5s, linear)
 
+    @media screen and (max-width: 600px)
+     font-size 4rem
+
+    @media screen and (max-width: 360px)
+     font-size 2.5rem
+
   .banner-title:hover h1
     transform scale(1.1)
 
@@ -249,6 +258,9 @@ setTransition()
   cursor pointer
   padding: 5px 10px
 
+  @media screen and (max-width: 600px)
+   font-size: 1.3rem;
+
 .banner-body .body-item:hover
   background var(--color)
   position relative
@@ -276,5 +288,9 @@ setTransition()
   left 14%
   bottom 5%
   margin-top 20px
+
+ @media screen and (max-width: 600px)
+  width 10% !important
+  left 33%
 
 </style>
