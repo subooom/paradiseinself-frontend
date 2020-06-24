@@ -172,6 +172,9 @@ export default {
      @media screen and (max-width: 768px)
       padding-left 47px
 
+     @media screen and (max-width: 360px)
+      padding-left 14px
+
   .transparent-circle-div
     display flex
     flex-direction row
@@ -192,6 +195,8 @@ export default {
 
   .banner-legend>div
     position relative
+  @media screen and (max-width: 360px)
+     margin 0 27px
 
   .dots-divider
     margin-left 20px
@@ -225,6 +230,6 @@ export default {
       left: -15%;
 
   .legend-right-div i
-    left: 75%;
+     left: 75%;
 
 </style>

@@ -176,6 +176,11 @@ setTransition()
     padding-right: 20px;
     flex-wrap: wrap;
 }
+@media screen and (max-width:360px){
+ .horizontal-flex {
+   margin-left :-38px;
+}
+}
 
 .header{
     width: 100%;
@@ -272,7 +277,7 @@ h5 {
 @media screen and (max-width:360px){
  .about h1{
    margin-top :140px;
-   font-size: 70px;
+   font-size: 60px;
 }
 }
 
@@ -349,6 +354,11 @@ h4 {
 .season {
     margin-left: 95px;
     max-width: 500px;
+}
+@media screen and (max-width:360px){
+ .season {
+   margin-left :55px;
+}
 }
 .heading h2 {
     color: var(--color);

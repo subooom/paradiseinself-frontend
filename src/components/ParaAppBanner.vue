@@ -218,6 +218,9 @@ setTransition()
     @media screen and (max-width: 600px)
      font-size 4rem
 
+    @media screen and (max-width: 360px)
+     font-size 2.5rem
+
   .banner-title:hover h1
     transform scale(1.1)
 
